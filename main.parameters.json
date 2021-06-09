@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "envPrefixName": {
+      "value": "mog10"
+    },
+    "adminUserName": {
+      "value": "vmadmin"
+    }
+
+    // by default you will be asked for the password during deployement
+
+    // uncomment this part if you would like to read the password from a Keyvault and don't forget the commas :)
+    /*
+    "adminUserPass": {
+      "reference": {
+        "keyVault": {
+          "id": "<paste your vault resourceId here>"
+        },
+        "secretName": "VMPassword"
+      }
+    }
+    */
+    // end of the keyvault part
+
+
+    // uncomment the password parameter part below if you want to put your password in the paramter file in clear text. Don't forget the commas :)
+    /*
+    "adminUserPass": {
+      "value": "YOUR PASSWORD HERE"
+    }
+    */
+    // end of the password parameter part
+  }
+}
